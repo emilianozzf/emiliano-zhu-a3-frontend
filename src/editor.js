@@ -15,10 +15,10 @@ export default function Editor(props) {
         <label for="name">Long URL:</label>
         <input name="name" onChange={(e) => {longURL=e.target.value}}></input>
         <button onClick={() => {
-            Axios.put('http://localhost:3000/api/url/'+id, {_id: id, longURL: longURL})
+            Axios.put('https://emiliano-zhu-a3-backend.herokuapp.com/api/url/'+id, {_id: id, longURL: longURL})
         }}>Submit</button>
         <button onClick={() => {
-            Axios.delete('http://localhost:3000/api/url/'+id)
+            Axios.delete('https://emiliano-zhu-a3-backend.herokuapp.com/api/url/'+id)
         }}>Delete</button>
     </div>
     );

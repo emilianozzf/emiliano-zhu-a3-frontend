@@ -9,7 +9,7 @@ export default function Redirector(props) {
     let id = params.id;
     let longURL = '';
 
-    Axios.get('http://localhost:3000/api/url/'+id).then(response => {
+    Axios.get('https://emiliano-zhu-a3-backend.herokuapp.com/api/url/'+id).then(response => {
         longURL = response.data.longURL;
         window.location.href = longURL;
       });

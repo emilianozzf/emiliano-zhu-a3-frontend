@@ -15,7 +15,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    Axios.get('http://localhost:3000/api/url')
+    Axios.get('https://emiliano-zhu-a3-backend.herokuapp.com/api/url')
     .then(response => {
         this.setState({urlList: response.data})
     });
@@ -29,13 +29,13 @@ export default class App extends React.Component {
 
   onSubmit() {
     Axios.post(
-      'http://localhost:3000/api/url',
+      'https://emiliano-zhu-a3-backend.herokuapp.com/api/url',
       {
         _id: this.state._id,
         longURL: this.state.longURL,
       }
     ).then(function() {
-      return Axios.get('http://localhost:3000/api/url')
+      return Axios.get('https://emiliano-zhu-a3-backend.herokuapp.com/api/url')
     })
     .then(response => {
       this.setState({urlList: response.data})
